@@ -56,7 +56,7 @@ def crawl(_):
         }
         r2 = session.post('http://m.xuekubao.com/index.php?m=Show&a=imgcheck', data=data2, timeout=10)
         if '{"error":1}' not in r2.content:
-            shutil.move(filename, './captcha/%s---%s.png' % (filename.split('.')[0], code))
+            shutil.move(filename, './captchas/%s---%s.png' % (filename.split('.')[0], code))
             print '%s: successful: %s --> %s' % (datetime.datetime.now(), filename, code)
         else:
             print 'failed: %s' % filename
